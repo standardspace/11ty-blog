@@ -224,3 +224,63 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited {
   color: #aaa;
 }
+
+audio {
+  width: 100%;
+}
+
+
+table {
+  border-collapse: collapse; width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+/* Stack rows vertically on small screens */
+@media (max-width: 600px) {
+  /* Hide column labels */
+  thead tr {
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+  }
+
+  /* Leave a space between table rows */
+  tr + tr {
+    margin-top: 1.5em;
+  }
+
+  /* Get table cells to act like rows */
+  tr, td {
+    display: block;
+  }
+
+  /* Leave a space for data labels */
+  td {
+    /* padding-left: 50%;  */
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Add data labels */
+  td:before {
+    content: attr(data-label);
+    display: inline-block;
+    width: 30%;
+  }
+}
+
+  /* Stack labels vertically on smaller screens */
+
+  @media (max-width: 800) {
+    td {
+      padding-left: 0;
+    }
+
+    td:before {
+      display: block;
+      margin-left: 0;
+    }
+  }
